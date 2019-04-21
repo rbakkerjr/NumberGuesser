@@ -30,10 +30,10 @@ namespace NumberGuesser
                 Console.WriteLine("Is your number lower or higher than " + guess);
                 Console.WriteLine("If the number is higher type higher. If lower type lower. If its your number type correct.");
 
-                Console.WriteLine("-----Debug-----"); // This section was for debugging purposes. 
-                Console.WriteLine("High: " + highNumber); // Allows me to see the current values for the to variables
-                Console.WriteLine("Low: " + lowNumber);
-                Console.WriteLine("----------");
+                //Console.WriteLine("-----Debug-----"); // This section was for debugging purposes. 
+                //Console.WriteLine("High: " + highNumber); // Allows me to see the current values for the to variables
+                //Console.WriteLine("Low: " + lowNumber);
+                //Console.WriteLine("----------");
 
                 string answer = Console.ReadLine();
                 

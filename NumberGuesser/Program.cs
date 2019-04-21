@@ -13,26 +13,37 @@ namespace NumberGuesser
             int lowNumber = 0; // Sets the initial low part of the range
             int highNumber = 1000; // Sets the initial high part of the range
 
-            Random r = new Random(); // Instatiates the Random class to r
-            int randGuess = r.Next(lowNumber, highNumber); // Sets  up the variable with the guess amount
+            Random r = new Random(); // Sets up the function to generate a random number
+
 
             bool correctGuess = false; // This is used to exit the while loop if the answer guessed was correct
-            
+            int guess; // This is used for the guess itself after randGuess is ran
 
             Console.WriteLine("Guess a number between 1 and 1000 then hit enter");
-            Console.WriteLine("Is your number lower or higher than " + r.Next(lowNumber, highNumber));
-            Console.WriteLine("If the number is higher type higher. If lower type lower. If its your number type correct.");
-            string answer = Console.ReadLine();
+
+            
 
             while (correctGuess == false) // Start the loop for guessing higher / lower
             {
+                int randGuess = r.Next(lowNumber, highNumber); // Sets  up the variable with the guess
+                guess = randGuess; // Sets up the next number it guesses
+                Console.WriteLine("Is your number lower or higher than " + guess);
+                Console.WriteLine("If the number is higher type higher. If lower type lower. If its your number type correct.");
+
+                Console.WriteLine("-----Debug-----"); // This section was for debugging purposes. 
+                Console.WriteLine("High: " + highNumber); // Allows me to see the current values for the to variables
+                Console.WriteLine("Low: " + lowNumber);
+                Console.WriteLine("----------");
+
+                string answer = Console.ReadLine();
+                
                 if (answer.ToLower() == "higher")
                 {
-
+                    lowNumber = guess;
                 }
                 else if (answer.ToLower() == "lower")
                 {
-
+                    highNumber = guess;
                 }
                 else if (answer.ToLower() == "correct")
                 {
@@ -46,7 +57,7 @@ namespace NumberGuesser
 
             Console.WriteLine("Hooray I guessed the right number!");
 
-            Console.ReadLine();
+            Console.ReadLine(); // this is used to keep the console open so you can see the win phrase
         }
     }
 }

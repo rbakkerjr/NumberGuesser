@@ -39,11 +39,11 @@ namespace NumberGuesser
                 
                 if (answer.ToLower() == "higher")
                 {
-                    lowNumber = guess;
+                    lowNumber = guess + 1; // This sets the low end of the range + 1 because it can be assumed the number display was NOT their number
                 }
                 else if (answer.ToLower() == "lower")
                 {
-                    highNumber = guess;
+                    highNumber = guess -1; // This sets the high end of the range - 1 because it can be assumed the number display was NOT their number
                 }
                 else if (answer.ToLower() == "correct")
                 {
@@ -51,7 +51,7 @@ namespace NumberGuesser
                 }
                 else
                 {
-                    Console.WriteLine("Please type higher, lower, or correct");
+                    Console.WriteLine("Please type higher, lower, or correct"); // Psuedo error checking
                 }
             }
 
